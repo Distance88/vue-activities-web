@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="favicon.ico">
+  <script src="//at.alicdn.com/t/font_2063387_advv1n8a2n6.js"></script>
+  <title>南工社团</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <div class="ui vertical icon buttons m-fiex animated bounceInDown" id="scrollup" style="display: none;">
+    <button class="ui teal button toMessage" id="message">留言</button>
+    <button class="ui button my-button"><i class="qq icon"></i></button>
+    <button class="ui button" id="up"><i class="chevron up icon"></i></button>
+    <div class="ui popup">
+      <img src="./static/layui/images/19南工群聊二维码.png" alt="">
+    </div>
+  </div>
+</body>
+<style>
+  body {
+    position: relative;
+  }
+  a {
+    color: #fff;
+  }
+  a:hover {
+    color: #f2711c;
+  }
+  .m-fiex {
+    position: fixed;
+    bottom: 30px;
+    right: 25px;
+  }
+</style>
+<script src="//at.alicdn.com/t/font_2063387_ytemrt703md.js"></script>
+<script src="./static/layui/js/jquery-3.4.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script type="text/javascript">
+
+  window.onscroll = function () {
+    //变量t是滚动条滚动时，距离顶部的距离
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    var scrollup = document.getElementById('scrollup');
+    //当滚动到距离顶部200px时，返回顶部的锚点显示
+    if (scrollTop >= 300) {
+      scrollup.style.display = "block";
+    } else { //恢复正常
+      scrollup.style.display = "none";
+    }
+  }
+  window.onload = function () {
+    var up = document.getElementById('up');
+    up.onclick = function () {
+      document.documentElement.scrollTop = 0
+    }
+
+    $('.my-button').popup({
+      position:'left center',
+      inline:true
+    });
+  }
+</script>
+
+</html>
